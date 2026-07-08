@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-white/20 dark:border-gray-700/30 shadow-lg;
+  }
+
+  .glass-card {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-xl rounded-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-primary-500 via-primary-600 to-accent-500;
+  }
+
+  .gradient-bg-hero {
+    @apply bg-gradient-to-br from-primary-900 via-primary-800 to-accent-900;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium rounded-xl 
+           hover:from-primary-600 hover:to-primary-700 transform hover:scale-105 
+           transition-all duration-300 shadow-lg hover:shadow-xl 
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+           dark:focus:ring-offset-gray-900;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white font-medium rounded-xl 
+           border border-gray-200 dark:border-gray-700
+           hover:bg-gray-50 dark:hover:bg-gray-700 transform hover:scale-105 
+           transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+
+  .btn-accent {
+    @apply px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-medium rounded-xl 
+           hover:from-accent-600 hover:to-accent-700 transform hover:scale-105 
+           transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 
+           rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl 
+           transition-all duration-300 overflow-hidden;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white font-display;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  }
+}
+
+/* Swiper custom styles */
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-white !important;
+  @apply bg-black/30 backdrop-blur-sm rounded-full w-12 h-12 !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.2rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-primary-500 !important;
+}
+
+/* Leaflet fix */
+.leaflet-container {
+  z-index: 0;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Rich text content for blog */
+.rich-text h1 { @apply text-3xl font-bold mb-4; }
+.rich-text h2 { @apply text-2xl font-bold mb-3; }
+.rich-text h3 { @apply text-xl font-bold mb-2; }
+.rich-text p { @apply mb-4 leading-relaxed; }
+.rich-text ul { @apply list-disc pl-6 mb-4; }
+.rich-text ol { @apply list-decimal pl-6 mb-4; }
+.rich-text li { @apply mb-2; }
+.rich-text img { @apply rounded-xl my-6 w-full; }
+.rich-text blockquote { @apply border-l-4 border-primary-500 pl-4 italic my-4; }
+.rich-text a { @apply text-primary-500 hover:underline; }
